@@ -1,9 +1,9 @@
 # ALFF
-Apex Legends Friend Finder. As or right now there is a fully functional registration and login system. 
-to run you need pyhton3 installed along with pip3. use pip3 to install django then run:
-
-'python3 manage.py runserver'
-
+Apex Legends Friend Finder. As of right now there is a fully functional registration and login system. 
+To run you need pyhton3 installed along with pip3. Use pip3 to install django then run:
+'''
+python3 manage.py runserver
+'''
 The current version of the project is being hosted at 
 
 http://52.15.54.193/
@@ -14,7 +14,7 @@ http://52.15.54.193/
 -	settings.py (various settings)
 -	urls.py (defines Urls for the project)
 
-**webapp** (COntains the actuall application)
+**webapp** (Contains the actuall application)
 -	static (Static files go in here. js css jpg etc)
 -	templates (html only)
 -	models.py (Defines how the database will be set up. Objects will be defined here)
