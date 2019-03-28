@@ -2,7 +2,7 @@ from django.shortcuts import render
 import os
 from django.views.decorators.csrf import csrf_exempt,csrf_protect
 from django.http import HttpResponse
-from webapp.models import user
+from webapp.models import user, SearchCriteria
 from django.shortcuts import redirect
 # Create your views here.
 
@@ -33,9 +33,11 @@ def signup(request):
             userObj = user.objects.get(pk=newEmail)
         except user.DoesNotExist:
             newPassword = request.POST['psw']
+            newEmptyCriteria = SearchCriteria()
+            newEmptyCriteria.save()
             newUsername = request.POST['uname']
             newAge = request.POST['age']
-            newUser = user(email=newEmail, username=newUsername, password=newPassword, age=newAge)
+            newUser = user(email=newEmail, username=newUsername, password=newPassword, age=newAge, criteria = newEmptyCriteria)
             newUser.save()
             return render(request, "signupSucc.html")
         return render(request, "signupFail.html")
