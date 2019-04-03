@@ -8,8 +8,11 @@
     <textarea id="chat-log" cols="100" rows="20"></textarea><br/>
     <input id="chat-message-input" type="text" size="100"/><br/>
     <input id="chat-message-submit" type="button" value="Send"/>
+<p hidden id="user"> {{ user }} </p>
+
 </body>
 <script>
+    var username = document.getElementById("user").innerHTML;
     var roomName = {{ room_name_json }};
 
     var chatSocket = new WebSocket(
@@ -18,7 +21,7 @@
 
     chatSocket.onmessage = function(e) {
         var data = JSON.parse(e.data);
-        var message = data['message'];
+        var message = username + ": " + data['message'];
         document.querySelector('#chat-log').value += (message + '\n');
     };
 
@@ -43,4 +46,6 @@
         messageInputDom.value = '';
     };
 </script>
+
+
 </html>
