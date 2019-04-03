@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webapp',
+    'channels',
+    'chat'
+
 ]
 
 MIDDLEWARE = [
@@ -79,6 +82,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'ALFF.wsgi.application'
+ASGI_APPLICATION = 'ALFF.routing.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 
 # Database
