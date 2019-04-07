@@ -1,0 +1,182 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Apex Legends Friend Finder</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../static/style.css">
+	</head>
+	<body>
+	  <!-- navbar -->
+        <ul>
+            <li><a href="/profile/">Profile</a></li>
+            <li><a href="/characters/">Characters</a></li>
+            <li><a href="#profile">Random Chat</a></li>
+            <input id="searchBar" type="text" placeholder="Search.." width="45px;">
+            <button id="searchBtn" type="submit"> Search </button>
+            <li style="float:right"><a class="active" href="/logout">Log out</a></li>
+        </ul>
+		 <h3 style="text-align: center; font-family: 'Teko', sans-serif; font-size:300%"><b> </b>Learn about Characters!</h3>
+		<hr>
+		<p style=" text-align: justify; font-family: 'Teko', sans-serif; font-size: 170%; padding:20px; ">Apex Legends has 9 different characters all with different skills
+					and abilities. It is important to get to know each one to choose
+					the correct character to be on a team with. Get to know all the 
+					characters here! </p>
+		<div class="container">
+		<div id="bangIMG">
+			<img src="../static/bangalore.png" alt="Bangalore Photo">
+		</div>
+		<div id="bangalore">
+			<h1> Bangalore </h1>
+            <p>
+                "Professional Solider"<br><br>
+                Tactical Ability: Smoke Launcher<br><br>
+                Passive Ability: Double Time <br><br>
+                Ultimate Ability: Rolling Thunder<br><br>
+                Background: Born into a military family where she,
+                her parents, and her four older brothers all served
+                in the IMC Armed Forces, Bangalore has been an exceptional
+                soldier since she was young. She was top of her class at the
+                IMC Military Academy and the only cadet who could take apart a
+                Peacekeeper, equip it with a Precision Choke hop-up, and put it
+                back together in under twenty seconds – blindfolded.
+            </p>
+		</div>
+		<div id="bloodIMG">
+			<img src="../static/blood.png" alt="Bloodhound Photo">
+		</div>
+		<div id="bloodhound">
+			<h1> Bloodhound</h1>
+			<p> "Technological Tracker"<br><br>
+				Tactical Ability: Eye of the Allfather<br><br>
+				Passive Ability: Tracker<br><br>
+				Ultimate Ability: Beast of the Hunt<br><br>
+				Background: Bloodhound is known across the Outlands as one of the 
+				greatest game hunters the Frontier has ever seen – and that’s
+				about all anyone knows. Their identity is a mystery wrapped in 
+				layers of rumors: they are fabulously wealthy, a bloodthirsty 
+				murderer, a Goliath whisperer, a former slave, half bat, and a
+				dozen other things depending on who’s doing the whispering.
+			</p>
+		</div>
+		<div id="causticIMG">
+			<img src="../static/caustic.png" alt="Caustic Photo">
+		</div>
+		<div id="caustic"> 
+			<h1>Caustic</h1>
+			<p> "Toxic Tracker"<br><br>
+				Tactical Ability: Nox Gas Trap<br><br>
+				Passive Ability: Nox Vision<br><br>
+				Ultimate Ability: Nox Gas Grenade<br><br>
+				Background: Before there was Caustic, a scientist named
+				Alexander Nox worked at Humbert Labs, the Frontier’s 
+				leading manufacturer of pesticide gases. With a glut of 
+				pesticides needed to protect the growing Frontier colonies’ 
+				crops, Humbert Labs was constantly on the hunt for better and 
+				stronger formulas. Nox was one of their brightest scientists and 
+				worked day and night developing new gases. But to make sure they 
+				worked, he needed to test them on more than just inert tissue: he 
+				needed something living.</p> 
+		</div>
+		<div id="gibIMG">
+			<img src="../static/gib.png" alt="Gib Photo">
+		</div>
+		<div id="gibraltar"> 
+			<h1>Gibraltar</h1>
+			<p> "Shield Fortress" <br><br> 
+				Tactical Ability: Dome of Protection<br><br> 
+				Passive Ability: Gun Shield<br><br>
+				Ultimate Ability: Defensive Bombardment<br><br> 
+				Background: Gibraltar is a gentle giant with a wild side. The son of 
+				two SARAS (Search and Rescue Association of Solace) volunteers, he has 
+				always been skilled at getting others out of dangerous situations that are 
+				common in the Outlands. However, he only began to understand the value of 
+				protecting others when he and his boyfriend stole his father’s motorcycle,
+				took it on a joyride, and got trapped by a deadly mudslide. His parents
+				saved them, and his father lost an arm in the process. Gibraltar has never 
+				forgotten that sacrifice and has devoted his life to helping those in need.</p>
+		</div>
+		<div id="lifelineIMG">
+			<img src="../static/life.png" alt="LifeLine Photo">
+		</div>
+		<div id="lifeline"> 
+			<h1>Lifeline</h1>
+			<p> "Combat Medic" <br><br>
+				Tactical Ability: D.O.C. Heal Drone<br><br>
+				Passive Ability: Combat Medic<br><br>
+				Ultimate Ability: Care Package<br><br>
+				Background: Ajay Che, aka Lifeline, isn’t someone you would expect to find 
+				in the Apex Games. Once the child of wealthy war profiteers, she left home 
+				when she learned of the damage her family had caused and enlisted in the 
+				Frontier Corps, a humanitarian organization that aids Frontier communities 
+				in need. She’s since devoted her life to helping others and joined the Apex 
+				Games to fund the Frontier Corps with her winnings.
+			</p> 
+		</div>
+		<div id="mirageIMG">
+			<img src="../static/mirage.png" alt="Mirage Photo">
+		</div>
+		<div id="mirage"> 
+			<h1>Mirage</h1>
+			<p> "Holographic Trickster" <br><br>
+				Tactical Ability: Psyche Out<br><br>
+				Passive Ability: Encore!<br><br>
+				Ultimate Ability: Vanishing Act<br><br>
+				Background: Mirage is the kind of guy who likes to stand out. The youngest
+				of four brothers, he perfected the art of fooling around to get attention. 
+				The one thing he took seriously was Holo-Pilot technology: introduced to 
+				the illusion-creating tech by his engineer mother, he poured over the 
+				mechanisms and learned all he could about them. Even when his brothers went 
+				MIA during the Frontier War, Mirage and his mother continued to develop holo 
+				devices, and the work brought them closer.</p>
+		</div>
+		<div id="octaneIMG">
+			<img src="../static/octane.png" alt="Octane Photo">
+		</div>
+		<div id="octane"> 
+			<h1>Octane</h1>
+			<p> "The Adrenaline Junkie"<br><br> 
+				Tactical Ability: Stim<br><br>
+				Passive Ability: Swift Mend<br><br>
+				Ultimate Ability: Launch Pad<br><br>
+				Background: One day, Octavio Silva was bored. In fact, he was bored most days. 
+				Heir to the preoccupied CEOs of Silva Pharmaceuticals and wanting for nothing 
+				in life, he entertained himself by performing death-defying stunts and posting 
+				holovids of them for his fans to gawk over. So, this day, he decided to set the
+				course record for a nearby Gauntlet by launching himself across the finish line – 
+				using a grenade. </p>
+		</div>
+		<div id="pathfinderIMG">
+			<img src="../static/pathfinder.png" alt="Pathfinder Photo">
+		</div>
+		<div id="pathfinder"> 
+			<h1>Pathfinder</h1>
+			<p> Tactical Ability: Grappling Hook<br><br>
+				Passive Ability: Insider Knowledge<br><br>
+				Ultimate Ability: Zipline Gun<br><br>
+				Background: Pathfinder is the picture of optimism, despite his circumstances.
+				A MRVN (Mobile Robotic Versatile eNtity) modified to specialize in location 
+				scouting and surveying, he booted up decades ago in an abandoned laboratory 
+				with no idea who created him or why. With only his MRVN designation to hint 
+				at his identity, Pathfinder set off in search of his creator.</p>
+		</div>
+		<div id="wraithIMG">
+			<img src="../static/wraith.png" alt="Wraith Photo">
+		</div>
+		<div id="wraith"> 
+			<h1>Wraith</h1>
+			<p> Tactical Ability: Into the Void<br><br>
+				Passive Ability: Voices from the Void<br><br>
+				Ultimate Ability: Dimensional Rift<br><br>
+				Background: Wraith is a whirlwind fighter, able to execute swift and deadly attacks and
+				manipulate spacetime by opening rifts in the fabric of reality — but she
+				has no idea how she got that way. Years ago, she woke up in an IMC 
+				Detention Facility for the Mentally Ill with no memory of her life before. 
+				She also began hearing a distant voice whispering in her mind that would 
+				keep her awake for days on end. Despite nearly driving her insane, once she 
+				started to listen and trust it, the voice helped her harness her newfound power 
+				of void manipulation and escape the facility.</p>
+		</div>
+		</div>
+	</body>
+</html>

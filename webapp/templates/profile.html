@@ -1,0 +1,49 @@
+﻿{% load static %}
+	<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Apex Legends Friend Finder</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../static/style.css">
+	</head>
+	<body>
+	  <!-- navbar -->
+		<ul>
+		  <li><a href="/profile/">Profile</a></li>
+          <li><a href="/charactersLoggedIn/">Characters</a></li>
+		  <li><a href="#profile">Random Chat</a></li>
+		  <input id="searchBar" type="text" placeholder="Search.." width="45px;">
+		  <button  id="searchBtn" type="submit"> Search </button>
+          <li style="float:right"><a class="active" href="/logout">Log out</a></li>
+		</ul>
+	<body>
+		<div class="container">
+			<div id="teamIMG">
+			<img src="../static/team.jpg" alt="Team Photo" style="width:650px; height: 500px;" >
+		</div>
+		<fieldset id="ProfileDetails">
+			<legend>User Profile</legend>
+			<label> Apex Username: </label><br><br>
+			<label> Device Used: </label><br><br>
+			<label> Do you have a microphone: </label><br> 
+			<input type="radio" name="microphone" value="yesMic" checked>Yes I have a Microphone<br>
+			<input type="radio" name="microphone" value="noMic">No I do not have a Microphone<br><br>
+			<label> Favorite Character: </label><br><br>
+			<label> Location: </label><br><br>
+			<label> User Age: </label><br><br>
+			<input type="submit" value="Change Profile">
+		</fieldset>
+		<fieldset id="teamMateDetails">
+			<legend>Team Preferences</legend>
+			<label> Device Preferred: </label><br><br>
+			<label> Do you prefer a microphone: </label><br> 
+			<input type="radio" name="microphone" value="yesMic" checked>Yes I want a Microphone<br>
+			<input type="radio" name="microphone" value="noMic">No I do not want a Microphone<br><br>
+			<label> Preferred Character: </label><br><br>
+			<label> Preferred Location: </label><br><br>
+			<label> Preferred Age:</label><br><br><br>
+			<input type="submit" value="Change Preference">
+		</fieldset>
+		</div>
+	</body>
+</html>

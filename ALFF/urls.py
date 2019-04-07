@@ -22,7 +22,9 @@ urlpatterns = [
     path("", views.index),
     path("login/", views.login),
     path("signup/" , views.signup),
-    path("dash/", views.dash),
+    path("profile/", views.profile),
+    path("characters/", views.characters),
+    path("charactersLoggedIn/", views.charactersLoggedIn),
     path("logout/", views.logout),
     path('chat/', include('chat.urls', namespace='chat')),
 

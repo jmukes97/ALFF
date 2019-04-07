@@ -1,0 +1,235 @@
+ body{
+         background: url("{% static 'background-landing.jpg' %}") no-repeat center center fixed; 
+         height: 100%;
+         background position: center;
+         -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+		 background-color:lightgray;
+		
+      }
+.container {
+	display: grid;
+	grid-template-columns: repeat(10, 1fr) ;
+	grid-template-rows: auto;
+	margin: 0 auto 0 auto; 
+	grid-row-gap: 10px;
+	grid-column-gap: 0px;
+	font-family: serif;
+}	
+#searchBar {
+	width: 300px;
+	height: 30px;
+	margin-top: 15px;
+} 
+#searchBtn{
+	width: 60px;
+}
+#charGrid{
+		background-color:#953038;
+		  display: block;
+		  color: white;
+		  text-align: left;
+		  padding: 14px 16px;
+		  text-decoration: none;
+}
+#bangalore{
+	grid-column: 1/4;
+	grid-row: 2;
+	font-size: 15px;
+	color: black;
+	background-color: #953038;
+	margin: 30px;
+	color: white;
+	padding: 15px;
+	margin-left: 50px;
+	border-radius: 12px;
+	
+}
+#bloodhound{
+	grid-column: 4/7;
+	grid-row: 2;
+	font-size: 15px;
+	color: white;
+	background-color: #953038;
+	margin: 30px;
+	margin-left: 80px;
+	padding: 15px;
+	border-radius: 12px;
+}
+#caustic{
+	grid-column: 7/10;
+	grid-row: 2;
+	font-size: 15px;
+	color: white;
+	background-color: #953038;
+	margin: 30px;
+	margin-left: 80px;
+	padding: 15px;
+	border-radius: 12px;
+}
+
+#gibraltar{
+	grid-column: 1/4;
+	grid-row: 4;
+	font-size: 15px;
+	color: black;
+	background-color: #953038;
+	margin: 30px;
+	color: white;
+	padding: 15px;
+	margin-left: 50px;
+	border-radius: 12px;
+}
+#lifeline{
+	grid-column: 4/7;
+	grid-row: 4;
+	font-size: 15px;
+	color: white;
+	background-color: #953038;
+	margin: 30px;
+	margin-left: 80px;
+	padding: 15px;
+	border-radius: 12px;
+}
+#mirage{
+	grid-column: 7/10;
+	grid-row: 4;
+	font-size: 15px;
+	color: white;
+	background-color: #953038;
+	margin: 30px;
+	margin-left: 80px;
+	padding: 15px;
+	border-radius: 12px;
+}
+#octane{
+	grid-column: 1/4;
+	grid-row: 6;
+	font-size: 15px;
+	color: black;
+	background-color: #953038;
+	margin: 30px;
+	color: white;
+	padding: 15px;
+	margin-left: 50px;
+	border-radius: 12px;
+}
+#pathfinder{
+	grid-column: 4/7;
+	grid-row: 6;
+	font-size: 15px;
+	color: white;
+	background-color: #953038;
+	margin: 30px;
+	margin-left: 80px;
+	padding: 15px;
+	border-radius: 12px;
+}
+#wraith{
+	grid-column: 7/10;
+	grid-row: 6;
+	font-size: 15px;
+	color: white;
+	background-color: #953038;
+	margin: 30px;
+	margin-left: 80px;
+	padding: 15px;
+	border-radius: 12px;
+}
+#bangIMG{
+	grid-column: 1/4;
+	grid-row: 1;
+	padding-left: 55px;
+}
+#bloodIMG{
+	grid-column: 4/7;
+	grid-row: 1;
+	padding-left: 55px;
+}
+#causticIMG{
+	grid-column: 7/10;
+	grid-row: 1;
+	padding-left: 55px;
+}
+#gibIMG{
+	grid-column: 1/4;
+	grid-row: 3;
+	padding-left: 55px;
+}
+#lifelineIMG{
+	grid-column: 4/7;
+	grid-row: 3;
+	padding-left: 55px;
+}
+#mirageIMG{
+	grid-column: 7/10;
+	grid-row: 3;
+	padding-left: 55px;
+}
+#octaneIMG{
+	grid-column: 1/4;
+	grid-row: 5;
+	padding-left: 55px;
+}
+#pathfinderIMG{
+	grid-column: 4/7;
+	grid-row: 5;
+	padding-left: 55px;
+}
+#wraithIMG{
+	grid-column: 7/10;
+	grid-row: 5;
+	padding-left: 55px;
+}
+#teamIMG{
+	grid-column: 1/4;
+	grid-row: 1;
+	width: 50px;
+	padding-top: 20px;
+	padding-left:10px;
+}
+#ProfileDetails{
+	grid-column: 6/8;
+	grid-row: 1;
+	line-height: 30px;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+#teamMateDetails{
+	grid-column: 8/11;
+	grid-row: 1;
+	line-height: 30px;
+	margin-top: 15px;
+	margin-left: 35px;
+}
+ul {
+		  list-style-type: none;
+		  margin: 0;
+		  padding: 0;
+		  overflow: hidden;
+		  background-color: #953038;
+		  font-family: 'Teko', sans-serif;
+		  font-size: 200%
+		}
+li {
+		float: left;
+		}
+li a {
+		  display: block;
+		  color: white;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		}
+li a:hover:not(.active) {
+		  background-color: #E6E1DB;
+		}
+.active {
+		  background-color: #b27f39;
+		}
+p{
+			font-size: 15px;
+			color: black;
+		}
+	

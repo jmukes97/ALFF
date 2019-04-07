@@ -1,4 +1,4 @@
-{% load static %}
+﻿{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,10 +13,9 @@
   </head>
   <body>
   <!-- navbar -->
-     <ul>
+   <ul>
   <li><a href="/">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
+  <li><a href="/characters/">Characters</a></li>
   <li style="float:right"><a class="active" href="/login">Log in / Sign up</a></li>
 </ul>
 
@@ -45,23 +44,19 @@ effective team environment. Want to get started? Make an account!
          -webkit-background-size: cover;
          -moz-background-size: cover;
          -o-background-size: cover;
-
       }
-
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #953038;
-  font-family: 'Teko', sans-serif;
-  font-size: 200%
+  font-family: serif;
+  font-size: 175%
 }
-
 li {
   float: left;
 }
-
 li a {
   display: block;
   color: white;
@@ -69,13 +64,22 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
 }
-
 li a:hover:not(.active) {
   background-color: #E6E1DB;
 }
-
 .active {
   background-color: #b27f39;
 }
+#searchBar{
+	width: 450px;
+	height: 40px;
+	margin-top: 15px;
+	font-size: 25px;
+}
+#searchBtn{
+	width: 60px;
+	font-size: 15px;
+	margin-left: 15px;
+} 
   </style>
 </html>
