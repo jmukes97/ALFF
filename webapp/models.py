@@ -28,7 +28,59 @@ class user(models.Model):
     ('none', 'NYA'),
     )
     
-    location = models.CharField(max_length=100, default="NYA")
+    LOCATIONS = (
+        ('AL', 'AL'),
+        ('AK', 'AK'),
+        ('AZ', 'AZ'),
+        ('AR', 'AR'),
+        ('CA', 'CA'),
+        ('CO', 'CO'),
+        ('CT', 'CT'),
+        ('DE', 'DE'),
+        ('FL', 'FL'),
+        ('GA', 'GA'),
+        ('HI', 'HI'),
+        ('ID', 'ID'),
+        ('IL', 'IL'),
+        ('IN', 'IN'),
+        ('IA', 'IA'),
+        ('KS', 'KS'),
+        ('KY', 'KY'),
+        ('LA', 'LA'),
+        ('ME', 'ME'),
+        ('MD', 'MD'),
+        ('MA', 'MA'),
+        ('MI', 'MI'),
+        ('MN', 'MN'),
+        ('MS', 'MS'),
+        ('MO', 'MO'),
+        ('MT', 'MT'),
+        ('NE', 'NE'),
+        ('NV', 'NV'),
+        ('NH', 'NH'),
+        ('NJ', 'NJ'),
+        ('NM', 'NM'),
+        ('NY', 'NY'),
+        ('NC', 'NC'),
+        ('ND', 'ND'),
+        ('OH', 'OH'),
+        ('OK', 'OK'),
+        ('OR', 'OR'),
+        ('PA', 'PA'),
+        ('RI', 'RI'),
+        ('SD', 'SD'),
+        ('SC', 'SC'),
+        ('TN', 'TN'),
+        ('TX', 'TX'),
+        ('UT', 'UT'),
+        ('VT', 'VT'),
+        ('VA', 'VA'),
+        ('WA', 'WA'),
+        ('WV', 'WV'),
+        ('WI', 'WI'),
+        ('WY', 'WY'),
+        )
+    location = models.CharField(max_length=100, choices = LOCATIONS, default="NYA")
     charactor = models.CharField(max_length=15, choices=CHARACTORS, default="none")
 
 class SearchCriteria(models.Model):
@@ -53,7 +105,7 @@ class SearchCriteria(models.Model):
     ('Wraith', 'Wraith'),
     ('none', 'NYA'),
     )
-    location = models.CharField(max_length=100, default="NYA")
+    location = models.BooleanField(max_length=5, default="False")
     charactor = models.CharField(max_length=15, choices=CHARACTORS, default="none")
 
 
