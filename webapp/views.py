@@ -9,7 +9,7 @@ psqueue = []
 xqueue = []
 pcqueue = []
 chat = []
-seed = 100000000000
+seed = 1000000
 
 def index(request):
     return render(request, "index.html")
