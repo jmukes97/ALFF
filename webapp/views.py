@@ -9,6 +9,7 @@ psqueue = []
 xqueue = []
 pcqueue = []
 chat = []
+seed = 100000000000
 
 def index(request):
     return render(request, "index.html")
@@ -106,6 +107,7 @@ def joinQueue(request):
 def search(queue):
     user1 = queue[0]
     foundUsers = []
+    foundUsersBias = []
     i = 1
 
     # Find potential matches
@@ -154,5 +156,31 @@ def search(queue):
 
         #Add user to potential matches if the bias is above a certain threshold.
         if bias >= 10:
-            foundUser.append(newUser)
+            foundUsers.append(newUser)
+            foundUsersBias.append(bias)
+
+    #Find the final matches from the list of potential matches
+    finalMatches = []
+    if foundUsers.len() == 2:
+        finalMatches = foundUsers
+    while finalMatches.len() < 2:
+        max = 0
+        maxInd = -1
+        for i in foundUsersBias:
+            if foundUsersBias[i] > max:
+                max = foundUsersBias[i]
+                maxInd = i
+        finalMatches.append[foundUsers[maxInd]]
+        foundUsersBias[maxInd] = 0
+
+    #Add the found users to the chat wrapped in a chat object
+    chat.append(Chat(user1, finalMatches[0], finalMatches[1], seed))
+    seed = seed + 1
     return
+
+class Chat:
+    def __init__(self, user1, user2, user3, seed):
+        self.user1 = user1
+        self.user2 = user2
+        self.user3 = user3
+        self.seed = seed
