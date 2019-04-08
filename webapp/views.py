@@ -48,6 +48,7 @@ def signup(request):
         return render(request, "signupFail.html")
     return render(request, "signup.html")
 
+
 def profile(request):
     if 'email' in request.session:
         email = request.session['email']
@@ -55,8 +56,12 @@ def profile(request):
         boxInfo = ""
         if request.method == "POST":
             username = request.POST.get("c_user", "none")
+            print(username)
             if not username == "none":
-                userObj.username = username
+                if username:
+                    userObj.username = username
+                else:
+                    pass
             device = request.POST.get("c_device", "none")
             if not device == "none":
                 userObj.device = device
@@ -70,8 +75,12 @@ def profile(request):
             if not char == "none":
                 userObj.charactor = char
             age = request.POST.get("c_age", "none")
+            print(age)
             if not age == "none":
-                userObj.age = age
+                if age:
+                    userObj.age = age
+                else:
+                    pass
             pmic = request.POST.get("p_microphone", "none")
             if pmic == "true":
                 userObj.criteria.hasMic = True
@@ -81,10 +90,17 @@ def profile(request):
             if not pchar == "none":
                 userObj.criteria.charactor = pchar 
                 print(pchar)
+            locPref = request.POST.get("p_loc", "none")
+            if not locPref == "none":
+                if locPref == "true":
+                    userObj.criteria.location = True
+                else:
+                    userObj.criteria.location = False
         userObj.criteria.save()
         userObj.save() 
         return render(request, "profile.html", {"user": userObj, "info": boxInfo})
     return redirect("/")
+
 
 def characters(request):
     status = "Log in / Sign up"
