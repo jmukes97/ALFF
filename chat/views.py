@@ -4,10 +4,11 @@ import json
 from webapp.models import user, SearchCriteria
 
 
-
+#Calls index.html which is the chat room.
 def index(request):
     return render(request, 'chat/index.html', {})
 
+#
 def room(request, room_name):
     if not 'email' in request.session:
         return redirect("/")
