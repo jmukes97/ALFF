@@ -132,7 +132,7 @@ def search(queue):
     i = 1
 
     # Find potential matches
-    while foundUsers.len() < 2 or i < 11:
+    while len(foundUsers) < 2 or i < 11:
         #Initializations
         newUser = queue[i] #Looking at the next user in the queue
         charBias = 0 #These are the various bias' based on the search criteria values
