@@ -1,9 +1,17 @@
 ﻿{% load static %}
 	<!DOCTYPE html>
-<html lang="en">
 	<head>
+
+   <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta charset="utf-8">
+
+
 		<title>Apex Legends Friend Finder</title>
-		<meta charset="utf-8">
 		<link rel="stylesheet" href="../static/style.css">
 	</head>
 	<body>
@@ -11,39 +19,83 @@
 		<ul>
 		  <li><a href="/profile/">Profile</a></li>
           <li><a href="/charactersLoggedIn/">Characters</a></li>
-		  <li><a href="#profile">Random Chat</a></li>
+		  <li><a href="#profile">Join Queue</a></li>
 		  <input id="searchBar" type="text" placeholder="Search.." width="45px;">
 		  <button  id="searchBtn" type="submit"> Search </button>
           <li style="float:right"><a class="active" href="/logout">Log out</a></li>
 		</ul>
 	<body>
-		<div class="container">
-			<div id="teamIMG">
-			<img src="../static/team.jpg" alt="Team Photo" style="width:650px; height: 500px;" >
-		</div>
-		<fieldset id="ProfileDetails">
+               <br><br><br>
+               <div class="row" style="padding-right:3%"><div class="col-sm-6"></div>
+               <div class="col-sm-3">    
+               <form style="text-align: left;" method="POST"> {% csrf_token %}
+		<fieldset style="border: 1px solid black; padding-left:10%; padding-right:30%" >
 			<legend>User Profile</legend>
-			<label> Apex Username: </label><br><br>
-			<label> Device Used: </label><br><br>
+			<label> Apex Username: </label> <input type="text" placeholder= {{ user.username }}  name="c_user"><br><br>
+			<label> Device Used: {{ user.device }} </label> <br>
+                        <select name="c_device">
+                           <option value="" selected disabled hidden>Choose here</option>
+                           <option value="ps4">Playstation </option>
+                           <option value="xb1"> Xbox </option>
+                           <option value="pc">PC </option>
+                        </select><br><br>
+
 			<label> Do you have a microphone: </label><br> 
-			<input type="radio" name="microphone" value="yesMic" checked>Yes I have a Microphone<br>
-			<input type="radio" name="microphone" value="noMic">No I do not have a Microphone<br><br>
-			<label> Favorite Character: </label><br><br>
+			<input type="radio" name="c_microphone" value="true" checked>Yes<br>
+			<input type="radio" name="c_microphone" value="false">No <br><br>
+			<label> Favorite Character: {{ user.charactor }} </label><br>
+                        <select name="c_char">
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Gibraltar">Gibraltar</option>
+                            <option value="Mirage">Mirage</option>
+                            <option value="Mirage">Lifeline</option>
+                            <option value="Bloodhound">Bloodhound</option>
+                            <option value="Caustic">Caustic</option>
+                            <option value="Octane">Octane</option>
+                            <option value="Pathfinder">Pathfinder</option>
+                            <option value="Wraith">Wraith</option>
+                        </select><br><br>
 			<label> Location: </label><br><br>
-			<label> User Age: </label><br><br>
-			<input type="submit" value="Change Profile">
+                         <label> Age: </label> <input type="number" placeholder={{ user.age }} name="c_age"><br><br>
+
+                        <input type="submit" value="Change Profile"><br><br> 
 		</fieldset>
-		<fieldset id="teamMateDetails">
+              </form>
+            </div>
+             <div class="col-sm-3">
+              <form style="text-align: left" method="POST"> {% csrf_token %}
+		<fieldset style="border: 1px solid black; padding-right:30%; padding-left:10%"">
 			<legend>Team Preferences</legend>
-			<label> Device Preferred: </label><br><br>
-			<label> Do you prefer a microphone: </label><br> 
-			<input type="radio" name="microphone" value="yesMic" checked>Yes I want a Microphone<br>
-			<input type="radio" name="microphone" value="noMic">No I do not want a Microphone<br><br>
-			<label> Preferred Character: </label><br><br>
-			<label> Preferred Location: </label><br><br>
-			<label> Preferred Age:</label><br><br><br>
-			<input type="submit" value="Change Preference">
+			<label> Do you prefer a microphone: {{ user.criteria.hasMic }}</label><br> 
+			<input type="radio" name="p_microphone" value="true" checked>Yes<br>
+			<input type="radio" name="p_microphone" value="false">No<br><br>
+			<label> Preferred Team Character: {{ user.criteria.charactor }} </label><br>
+		        <select name="p_char">
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Gibraltar">Gibraltar</option>
+                            <option value="Mirage">Mirage</option>
+                            <option value="Lifeline">Lifeline</option>
+                            <option value="Bloodhound">Bloodhound</option>
+                            <option value="Caustic">Caustic</option>
+                            <option value="Octane">Octane</option>
+                            <option value="Pathfinder">Pathfinder</option>
+                            <option value="Wraith">Wraith</option>
+                        </select><br><br>
+			<input type="submit" value="Change Criteria"><br><br>
 		</fieldset>
-		</div>
+              </form>
+               </div>
+            </div>
 	</body>
+    <style>
+      body{
+         background: url("{% static 'team.jpg' %}") no-repeat center center fixed;
+         height: 100%;
+         background position: center;
+         -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+      }
+
+    <slyle>
 </html>

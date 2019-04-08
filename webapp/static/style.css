@@ -189,20 +189,6 @@
 	padding-top: 20px;
 	padding-left:10px;
 }
-#ProfileDetails{
-	grid-column: 6/8;
-	grid-row: 1;
-	line-height: 30px;
-	margin-top: 15px;
-	margin-left: 15px;
-}
-#teamMateDetails{
-	grid-column: 8/11;
-	grid-row: 1;
-	line-height: 30px;
-	margin-top: 15px;
-	margin-left: 35px;
-}
 ul {
 		  list-style-type: none;
 		  margin: 0;
