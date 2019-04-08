@@ -119,6 +119,7 @@ def search(queue):
         micBias1 = 0
         micBias2 = 0
         ageDiff = 0
+        i += 1
 
         #Calculation of Bias'
         ageDiff = user1.criteria.age - newUser.age
@@ -178,6 +179,7 @@ def search(queue):
     seed = seed + 1
     return
 
+#Class for encapsulating the users and chat seed
 class Chat:
     def __init__(self, user1, user2, user3, seed):
         self.user1 = user1
