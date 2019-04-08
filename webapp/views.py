@@ -121,7 +121,7 @@ def joinQueue(request):
     return
 
 def search(queue):
-    if queue.len() < 3:
+    if len(queue) < 3:
         return
     user1 = queue[0]
     foundUsers = []
@@ -129,7 +129,7 @@ def search(queue):
     i = 1
 
     # Find potential matches
-    while foundUsers.len() < 2 or i < 11:
+    while len(foundUsers) < 2 or i < 11:
         #Initializations
         newUser = queue[i] #Looking at the next user in the queue
         charBias = 0 #These are the various bias' based on the search criteria values
@@ -180,9 +180,9 @@ def search(queue):
 
     #Find the final matches from the list of potential matches
     finalMatches = []
-    if foundUsers.len() == 2:
+    if len(foundUsers) == 2:
         finalMatches = foundUsers
-    while finalMatches.len() < 2:
+    while len(finalMatches) < 2:
         max = 0
         maxInd = -1
         for i in foundUsersBias:
