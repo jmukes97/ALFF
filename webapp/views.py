@@ -86,8 +86,8 @@ def profile(request):
                 userObj.criteria.hasMic = True
             elif pmic == "false":
                 userObj.criteria.hasMic = False
-            pchar = request.POST.get("p_char", "none")
-            if not pchar == "none":
+            pchar = request.POST.get("p_char", "notSelected")
+            if not pchar == "notSelected":
                 userObj.criteria.charactor = pchar 
                 print(pchar)
             locPref = request.POST.get("p_loc", "none")

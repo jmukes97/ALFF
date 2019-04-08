@@ -1,4 +1,0 @@
-make sure redis is running
-start django project
-run 'celery -A ALFF worker -l info'
-run 'celery -A picha beat -l info'
