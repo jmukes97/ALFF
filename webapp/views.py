@@ -1,3 +1,4 @@
+import time
 from django.shortcuts import render
 import os
 from django.views.decorators.csrf import csrf_exempt,csrf_protect
@@ -24,7 +25,10 @@ def join(request):
         xqueue.append(userObj)
     if userObj.device == "pc":
         pcqueue.append(userObj)
+    timeout = time.time() + 15
     while True:
+        if time.time() > timeout:
+            break
         for chatObj in chat:
             if chatObj.user1.username == userObj.username:
                 chatSeed = chatObj.seed
