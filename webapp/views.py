@@ -49,15 +49,49 @@ def signup(request):
 
 def profile(request):
     if 'email' in request.session:
-        print(request.session['email'])
-        return render(request, "profile.html", {"username": request.session['username'], "email": request.session['email'], "age": request.session['email']})
+        email = request.session['email']
+        userObj = user.objects.get(pk=email)
+        boxInfo = ""
+        if request.method == "POST":
+            username = request.POST.get("c_user", "none")
+            if not username == "none":
+                userObj.username = username
+            device = request.POST.get("c_device", "none")
+            if not device == "none":
+                userObj.device = device
+
+            mic = request.POST.get("c_microphone", "none")
+            if mic == "true":
+                userObj.hasMic = True
+            elif mic == "false":
+                userObj.hasMic = False
+            char = request.POST.get("c_char", "none")
+            if not char == "none":
+                userObj.charactor = char
+            age = request.POST.get("c_age", "none")
+            if not age == "none":
+                userObj.age = age
+            pmic = request.POST.get("p_microphone", "none")
+            if pmic == "true":
+                userObj.criteria.hasMic = True
+            elif pmic == "false":
+                userObj.criteria.hasMic = False
+            pchar = request.POST.get("p_char", "none")
+            if not pchar == "none":
+                userObj.criteria.charactor = pchar 
+                print(pchar)
+        userObj.criteria.save()
+        userObj.save() 
+        return render(request, "profile.html", {"user": userObj, "info": boxInfo})
     return redirect("/")
 
 def characters(request):
-    return render(request, "characters.html")
+    status = "Log in / Sign up"
+    return render(request, "characters.html", {"status": status})
 
 def charactersLoggedIn(request):
-    return render(request, "charactersLoggedIn.html")
+    status = "Log Out"
+    return render(request, "characters.html", {"status": status})
 
 def logout(request):
     if 'email' in request.session:
