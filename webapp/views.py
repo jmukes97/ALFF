@@ -229,8 +229,8 @@ def search(queue):
 
 #Class for encapsulating the users and chat seed
 class Chat:
-    def __init__(self, user1, user2, user3, seed):
+    def __init__(self, user1, user2, user3, cSeed):
         self.user1 = user1
         self.user2 = user2
         self.user3 = user3
-        self.seed = seed
+        self.cSeed = cSeed
