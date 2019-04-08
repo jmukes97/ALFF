@@ -121,6 +121,8 @@ def joinQueue(request):
     return
 
 def search(queue):
+    if queue.len() < 3:
+        return
     user1 = queue[0]
     foundUsers = []
     foundUsersBias = []
