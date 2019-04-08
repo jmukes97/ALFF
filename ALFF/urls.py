@@ -27,5 +27,6 @@ urlpatterns = [
     path("charactersLoggedIn/", views.charactersLoggedIn),
     path("logout/", views.logout),
     path('chat/', include('chat.urls', namespace='chat')),
+    path('queue/', views.join),
 
 ]

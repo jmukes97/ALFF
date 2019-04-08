@@ -11,6 +11,10 @@ pcqueue = []
 chat = []
 seed = 1000000
 
+
+def join(request):
+    return render(request, "queue.html")
+
 def index(request):
     return render(request, "index.html")
 def login(request):
@@ -132,7 +136,7 @@ def search(queue):
     i = 1
 
     # Find potential matches
-    while len(foundUsers) < 2 or i < 11:
+    while foundUsers.len() < 2 or i < 11:
         #Initializations
         newUser = queue[i] #Looking at the next user in the queue
         charBias = 0 #These are the various bias' based on the search criteria values
