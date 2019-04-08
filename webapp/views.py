@@ -13,6 +13,29 @@ seed = 1000000
 
 
 def join(request):
+    if not 'email' in request.session:
+        return redirect("/")
+    email = request.session['email']
+    userObj = user.objects.get(pk=email)
+    chatSeed = ""
+    if userObj.device == "ps4":
+        psqueue.append(userObj)
+    if userObj.device == "xb1":
+        xqueue.append(userObj)
+    if userObj.device == "pc":
+        pcqueue.append(userObj)
+    while True:
+        for chatObj in chat:
+            if chatObj.user1.username == userObj.username:
+                chatSeed = chatObj.seed
+                return redirect("/chat/" + chatSeed)
+            if chatObj.user2.username == userObj.username:
+                chatSeed = chatObj.seed
+                return redirect("/chat/" + chatSeed)
+            if chatObj.user3.username == userObj.username:
+                chatSeed = chatObj.seed
+                return redirect("/chat/" + chatSeed)
+
     return render(request, "queue.html")
 
 def index(request):
